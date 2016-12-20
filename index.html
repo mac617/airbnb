@@ -1,0 +1,906 @@
+﻿<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no">
+<script src="./jquery/dist/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="./style.css">
+
+<script>
+$(document).ready(function(){
+	var i = 0;
+	$('#box img').fadeOut(0)
+	$('#box img').eq(0).fadeIn(0)
+
+	setInterval(function() {
+		if($('#box img').length>(i+2)){
+			$('#box img').eq(i+1).fadeIn(1000)
+			$('#box img').eq(i).fadeOut(1000)
+			i++}
+		else{
+			$('#box img').eq(0).fadeIn(1000)
+			$('#box img').eq(i).fadeOut(1000)
+			i=0;
+		}
+	},7000)
+})
+
+$(document).ready(function(){
+	var i = 0;
+	$('#second-box li').fadeOut(0)
+	$('#second-box li').eq(0).fadeIn(0)
+
+	$('#add').click(function() {
+		if(i == $('#second-box li').length - 1){
+			i = 0
+			$('#second-box li').eq(i).fadeIn(1000)
+			$('#second-box li').eq($('#second-box li').length - 1).fadeOut(1000)
+		}
+		else{
+		$('#second-box li').eq(i).fadeOut(1000)
+		$('#second-box li').eq(i+1).fadeIn(1000)
+		i++}
+	})
+	$('#minus').click(function() {
+		if(i == 0){
+			i = $('#second-box li').length - 1
+			$('#second-box li').eq(i).fadeIn(1000)
+			$('#second-box li').eq(0).fadeOut(1000)
+		}
+		else{
+		$('#second-box li').eq(i-1).fadeIn(1000)
+		$('#second-box li').eq(i).fadeOut(1000)
+		i--}
+	})
+})
+
+$(document).ready(function() {
+	$('#left-land-icon').click(function() {
+		$('.mask-land').css("visibility","visible")
+		$('.left-land').css("visibility","visible")
+		$('.left-land').addClass('left-land-donghua')
+		$('.mask-land').addClass('mask-land-donghua')
+	})
+	$('#mask').click(function() {
+		$('.mask-land').css("visibility","hidden")
+		$('.left-land').removeClass('left-land-donghua')
+		$('.mask-land').removeClass('mask-land-donghua')
+	})
+})
+
+</script>
+</head>
+<body>
+<div class="hidden-land">
+	<div id="mask" class="mask-land"></div>
+	<div class="left-land">
+		<div class="big-middle-land">
+			<div class="middle-land">
+				<ul class="land-ul">
+					<li class="land-li">首页</li>
+					<li class="land-li">下载应用</li>
+					<li class="land-li">成为房东</li>
+					<li class="land-li">注册</li>
+					<li class="land-li">登录</li>
+					<li class="land-li">发现</li>
+					<li class="land-li">搜索</li>
+					<li class="land-li">如何使用Airbnb?</li>
+				</ul>
+				<ul class="land-ul land-ul-bottom">
+					<li class="land-li">帮助</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hidden-header">
+	<a href="javascript:void(0);" id="left-land-icon" class="header-a iconfont">&#xe608;</a>
+	<div class="title-header"><a class="title-header-a"></a></div>
+</div>
+<div id="box">
+<img class="box-picture" src="./image/P1F1.jpg" alt="1"/>
+<img class="box-picture" src="./image/Live-There_IMG_5818.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Los_Angeles_Elliott_Pool_House_16-03-21_0137.jpg" alt="3"/>
+<img class="box-picture" src="./image/Live-There_Los_Angeles_Elliott_Pool_House_16-03-21_6529.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Paris_Elliott_A-Frame-Loft_16-03-08_3255.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Paris_Elliott_Tower-View_16-03-09_4364.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Tokyo_Elliott_Artist-Loft_20160222_0153_comp.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Tokyo_Elliott_Dinner_20160223_0137.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Tokyo_Elliott_Family-House_20160221_0003.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Tokyo_Elliott_Sento_20160223_0078.jpg" alt="2"/>
+<img class="box-picture" src="./image/Live-There_Tokyo_FarhadSamari-40.jpg" alt="2"/>
+
+<div id='header'>
+	<a href="javascript:void(0);">
+	<div id='biglogo' class='headerchild'>
+	<span class='iconfont airbnb-size'>&#xe604;</span>
+	<span class="airbnb-font">airbnb</span>
+	</div>
+	</a>
+	<a href="javascript:void(0);">
+	<div id='bigsignup' class='headerchild'>登录</div>
+	</a>
+	<a href="javascript:void(0);">
+	<div id='bigsignin' class='headerchild'><span>注册</span></div>
+	</a>
+	<a href="javascript:void(0);">
+	<div id='bighelp' class='headerchild'>
+	<span class="help">帮助</span>
+	<li class="help-icon"></li>
+	</div>
+	</a>
+	<a href="javascript:void(0);">
+	<div id='bigroomer' class='headerchild'><span id='roomer'>成为房东</span></div>
+	</a>
+	<div class="clear"></div>
+</div>
+<div class='headerelse'>
+<div class='va-block'>
+<div class='va-middle'>
+	<div>
+		<h1 class='va-word'><strong>
+		<span class="va-span">去旅行，去生活，哪怕就住一晚。</span>
+		</strong></h1>
+	</div>
+	<span class='word'>
+	<a>
+	<div class="big-circle">
+	<a href="javascript:void(0); icon-color">
+		<div class="mid-circle">
+			<div class="circle iconfont iconfont2 opacity">&#xe603;</div>
+		</div>
+	</a>
+	</div>
+	</a>
+	</span>
+</div>
+<div class='va-middle2'>
+	<span class='word'>
+	<a>
+	<div class="big-circle">
+		<div class="mid-circle">
+			<div class="circle iconfont iconfont2 opacity">&#xe603;</div>
+		</div>
+	</div>
+	</a>
+	</span>
+	<div>
+		<h1 class='va-word'><strong>
+		<span class="va-span">去旅行，去生活，哪怕就住一晚。</span>
+		</strong></h1>
+	</div>
+
+	<div class="hidden-footer">
+	<div class="where-footer">
+		<span class="where-font">想去哪里?</span>
+		<i class="i-footer iconfont">&#xe609;</i>
+	</div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="box-footer">
+<div id="bigsearchbar">
+<div id="searchbar">
+<div id="searchform">
+<div id="message">
+	<div class="line" id="bigwherego"><input id="wherego" placeholder="想去哪里？"></div>
+	<div class="line" id="date"><input id="godate" placeholder="入住日期">
+	<span><svg id="icon" viewBox="0 0 1000 1000" version="1.1"
+xmlns="http://www.w3.org/2000/svg"><path d="M694.4 242.4l249.1 249.1c11 11 11 21 0 32L694.4 772.7c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210.1-210.1H67.1c-13 0-23-10-23-23s10-23 23-23h805.4L662.4 274.5c-21-21.1 11-53.1 32-32.1z" data-reactid=".0.0.0.1.0.0.0.1.0.0"></path>
+
+</svg></span>
+	<input id="backdate" placeholder="退房日期">
+	<button id="undate"></button>
+	</div>
+	<div id="people" class="line">
+	<div id="arrowhidden">
+	<select id='selected'>
+	<option value ="*">1位房客</option>
+	<option value ="*">2位房客</option>
+	<option value="*">3位房客</option>
+  	<option value="*">4位房客</option>
+	<option value ="*">5位房客</option>
+	<option value ="*">6位房客</option>
+	<option value="*">7位房客</option>
+  	<option value="*">8位房客</option>
+	<option value ="*">9位房客</option>
+	<option value ="*">10位房客</option>
+	<option value="*">11位房客</option>
+  	<option value="*">12位房客</option>
+	<option value ="*">13位房客</option>
+	<option value ="*">14位房客</option>
+	<option value="*">15位房客</option>
+  	<option value="*">16+位房客</option>
+  	</select>
+  	<div id="bigarrow">
+  	<div class="arrow"></div>
+  	</div>
+  	</div>
+  	</div>
+  	<div id="bigsearch">
+  	<div class="mid-search">
+  	<button id="search"><a href="javascript:void(0);" class="padding-search743 padding-search">搜索</a></button>
+  	</div>
+  	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content">
+<div id="big-page-container">
+<div id="page-container">
+<div id="page1"><h2><strong>来自社区的故事</strong></h2></div>
+<div class="imgbox">
+	<a href="javascript:void(0);">
+	<div class="row-place space-bottom">
+	<img class="picture" src="./image/81208b45-b288-4e69-a556-4084909ea313.jpg">
+	<div class="big-title">
+		<div class="row-title">适合一群人出去玩的10个房子</div>
+		<div class="sub-title">民宿推荐</div>
+	</div>
+	</div>
+	</a>
+
+	<a href="javascript:void(0);">
+	<div class="row-place space-bottom">
+	<img class="picture" src="./image/65da123f-e0b6-4d17-b3e8-638aa42397e7.jpg">
+	<div class="big-title">
+		<div class="row-title">话说，吃了那么多次泰国菜，这道最地道的你绝对没吃过...</div>
+		<div class="sub-title">旅行故事</div>
+	</div>
+	</div>
+	</a>
+
+	<a href="javascript:void(0);">
+	<div class="row-place hidden-row-place space-bottom">
+	<img class="picture" src="./image/b5371173-6616-41e2-bcc1-4e17e9c938a0.jpg">
+	<div class="big-title">
+		<div class="row-title">田原的威尼斯行摄生活</div>
+		<div class="sub-title">旅行故事</div>
+	</div>
+	</div>
+	</a>
+	<div class="clear"></div>
+</div>
+</div>
+</div>
+<div id="big-weekend">
+<div id="weekend">
+	<div id="weekend-title">
+		<h2 class="space-1">
+			<strong>周末好去处</strong>
+		</h2>
+		<p>
+    发现离家近的好地方
+  </p>
+	</div>
+	<div class="big-row-weekend">
+	<a href="javascript:void(0);">
+		<div class="row-weekend1">
+			<div class="weekend-picture" style="background-image:url('./image/176.jpg')">
+				<div class="big-text">
+					<div class="text">
+						<h2>
+							<strong>清迈</strong>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		</a>
+
+		<a href="javascript:void(0);">
+		<div class="row-weekend2">
+			<div class="weekend-picture" style="background-image:url('./image/173.jpg')">
+				<div class="big-text">
+					<div class="text">
+						<h2>
+							<strong>曼谷</strong>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		</a>
+
+		<a href="javascript:void(0);">
+		<div class="row-weekend2">
+			<div class="weekend-picture" style="background-image:url('./image/377.jpg')">
+				<div class="big-text">
+					<div class="text">
+						<h2>
+							<strong>首尔</strong>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		</a>
+		<div class="clear"></div>
+	</div>
+<div id="row">
+	<div class="row-1 col">
+		<a class="row-2" href="javascript:void(0);">查看所有目的地</a>
+	</div>
+</div>
+</div>
+</div>
+<div class="big-world">
+<div class="world"><h2 class="space-2">探索世界</h2><p>
+          搜罗全球热门目的地
+        </p></div>
+<div class="big-img size744 padding0">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/397.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>巴黎</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img size744 padding0">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/a6d9fa6f_original.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<div class="big-head-photo">
+					<img class="head-photo" src="./image/176.jpg">
+				</div>
+				<div class="h3 strong">由长者出租</div>
+				<div>蛤蛤丛林</div>
+			</div>
+		</div>
+		<div class="price">
+			<sup class="h6">￥</sup>
+			<span class="h3">1198</span>
+			<span></span>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img size744 padding0">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/311.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>东京</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img hidden-3">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/2892.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>洛杉矶</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img hidden-3">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/nightlife_1x1.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>去旧金山享受夜生活</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img size744 padding0">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/55d284e6_original.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<div class="big-head-photo">
+					<img class="head-photo" src="./image/176.jpg">
+				</div>
+				<div class="h3 strong">由长者出租</div>
+				<div>蛤蛤丛林</div>
+			</div>
+		</div>
+		<div class="price">
+			<sup class="h6">￥</sup>
+			<span class="h3">1198</span>
+			<span></span>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img hidden-1">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/84.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>纽约</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="big-img hidden-3">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/58.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>米兰</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img hidden-2">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/84.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>纽约</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img hidden-3">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/94.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>柏林</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="little-img hidden-3">
+<a href="javascript:void(0);">
+	<div class="all-img" style="background-image:url('./image/beach_1x1.jpg')">
+		<div class="big-text">
+			<div class="text">
+				<h2>
+					<strong>去圣塔莫妮卡晒日光浴</strong>
+				</h2>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div class="clear"></div>
+</div>
+</div>
+<div class="hidden-9">
+<div id="second-box">
+	<a href="javascript:void(0);" id="minus" class="iconfont add bianse"><i class="font">&#xe605;</i></a>
+	<a href="javascript:void(0);" id="add" class="iconfont minus bianse"><i class="font">&#xe606;</i></a>
+	<li class="second-picture second-picture2" style="background-image:url('./image/belong-vid-b5b9b5ff3b53a7a4229d4acde53fb161.jpg')">
+		<div class="big-banner">
+			<div class="banner">
+				<div class="white text1">家在四方</div>
+				<div class="h3 white space2">Airbnb房东在世界各地缔造一个有归属感的家。</div>
+				<div class="big-circle">
+				<a href="javascript:void(0);">
+					<div class="mid-circle">
+						<div class="circle iconfont iconfont2 opacity bianse">&#xe603;</div>
+					</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="second-picture" style="background-image:url('./image/belo-vid-078cd6a63626517f9294598ceda49ee5.jpg')">
+		<div class="big-banner">
+			<div class="banner">
+				<div class="white text1">和我们一起认识 — Bélo</div>
+				<div class="h3 white space2">一个象征着归属感的标记和它背后的故事</div>
+				<div class="big-circle">
+					<div class="mid-circle">
+						<div class="circle iconfont iconfont2 opacity">&#xe603;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="second-picture3" style="background-color:#ffb400">
+		<img class="picture-background" src="./image/create-02-06fcf9119127632bdeeec8a3aa2cddce.png">
+		<div class="big-create">
+			<div class="create"><img  class="create-img" src="./image/create-01-91da0830c13bb80e81530326600da7a5.png"></div>
+			<div class="space-top-2">
+				<div class="h2 text-contrast"><strong>创造你的Airbnb</strong></div>
+				<div class="h2 text-contrast opacity"><strong>创造你的标志，分享你的故事！</strong></div>
+			</div>
+		</div>
+	</li>
+
+	<li class="second-picture second-picture2" style="background-image:url('./image/vacation-rentals-banner-f9a857d36e05fa6dff10893587085326.png')">
+		<div class="big-banner">
+			<div class="banner">
+				<div class="white text2">家在四方</div>
+				<div class="h3 white space3">无论是豪华别墅还是适合全家出行的公寓, 您都能在Airbnb上找到<br>最温暖舒适的家。</div>
+				<div class="search-btn">
+					<a class="search-a">开始探索</a>
+				</div>
+			</div>
+		</div>
+	</li>
+</div>
+</div>
+<section class="section hidden-4">
+<div class="our-place">
+	<h2>
+		<strong>我们的社区</strong>
+	</h2>
+</div>
+<ul class="big-place">
+<li class="mid-place col space-12">
+<a href="javascript:void(0);" id="a-hover">
+	<div class="little-place img-background1 background-cover">
+	<div class="img-background1-1 bianse1"></div>
+		<div class="content-place">
+			<div><img class="icon-create-img" src="./image/create-01-91da0830c13bb80e81530326600da7a5.png"></div>
+			<img class="bike-img" src="./image/create-img-bd380285eda2b7e32ba35c00c10699b7.png">
+			<div class="h3 white"><strong>创造属于您的Airbnb</strong></div>
+			<div class="white">创造你的标志，分享您的故事</div>
+		</div>
+	</div>
+	</a>
+</li>
+
+<li class="mid-place col space-12">
+<a href="javascript:void(0);" id="a-hover">
+	<div class="little-place img-background2 background-cover">
+	<div class="img-background1-1 bianse1"></div>
+		<div class="content-place">
+				<div class="label">
+					<div class="label-in2">
+						<strong class="white strong">旅行</strong>
+					</div>
+				</div>
+				<div class="label-else2">
+					<div class="label-bottom2 white">
+						<div class="h2"><strong>Garry和Lianne</strong></div>
+						<div class="space-4">加里（Gary）和莉安（Lianne）跨越海洋，前往另一个城市，不断寻找当地体验。<br><br>
+						<div class="fuck">了解更多通过Airbnb旅行的信息。</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	</a>
+</li>
+
+<li class="mid-place col space-12">
+<a href="javascript:void(0);" id="a-hover">
+	<div class="little-place img-background3 background-cover">
+	<div class="img-background1-1 bianse1"></div>
+		<div class="content-place">
+				<div class="label">
+					<div class="label-in3">
+						<strong class="white strong">商务差旅</strong>
+					</div>
+				</div>
+				<div class="label-else3">
+					<div class="label-bottom3 white">
+						<div class="h2"><strong>商务Airbnb</strong></div>
+						<div class="space-5">不管您的工作把您帶到哪，都像回到家里一样。 <br><br>
+						<div class="fuck">让您的团队加入Airbnb。</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	</a>
+</li>
+
+<li class="mid-place col space-12">
+<a href="javascript:void(0);" id="a-hover">
+	<div class="little-place img-background4 background-cover">
+	<div class="img-background1-1 bianse1"></div>
+		<div class="content-place">
+				<div class="label">
+					<div class="label-in4">
+						<strong class="white strong">出租</strong>
+					</div>
+				</div>
+				<div class="label-else4">
+					<div class="label-bottom4 white">
+						<div class="h2"><strong>Patricia</strong></div>
+						<div class="space-4">&nbsp;Patricia是一名专业摄影师，热爱帮助房客探索上海的艺术地点。&nbsp;<br><br>
+						<div class="fuck">了解更多在Airbnb上出租的信息。</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	</a>
+</li>
+</ul>
+</section>
+
+<div class="big-big-community hidden-5">
+	<div class="big-community">
+		<div class="community">
+			<div class="community-top">
+				<h2 class="h2">以信任为基础的社区</h2>
+			</div>
+			<div class="community-bottom">
+				<div class="community-bottom1 col">
+					<div class="space-7">
+						<span class="iconfont size">&#xe600;</span>
+						<h4>微博验证</h4>
+						<p> 使用您的微博帐户登录以验证您的身份。<br><a class="text-decoration white bianse" href="javascript:void(0);">了解更多</a></p>
+					</div>
+				</div>
+				<div class="community-bottom1 col">
+					<div class="space-7">
+						<span class="iconfont size">&#xe601;</span>
+						<h4 class="h4">可信赖的服务</h4>
+						<p> 维护Airbnb社区的信任和安全是我们的首要任务。<a class="text-decoration white bianse" href="javascript:void(0);">了解更多</a></p>
+					</div>
+				</div>
+				<div class="community-bottom1 col">
+					<div class="space-7">
+						<span class="iconfont size">&#xe602;</span>
+						<h4 class="h4">安全支付</h4>
+						<p> 支付宝付款已向中国用户开通，欢迎使用。<br><a class="text-decoration white bianse" href="#">了解更多</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="big-footer">
+	<footer>
+		<div class="margin1">
+			<div class="xuanxiang col">
+				<div>
+					<div>
+						<div class="space-8">
+							<select class="select">
+								<option>Bahasa Indonesia</option>
+								<option>Bahasa Melayu</option>
+								<option>Català</option>
+								<option>Dansk</option>
+								<option>Deutsch</option>
+								<option>English</option>
+								<option>Español</option>
+								<option>Eλληνικά</option>
+								<option>Français</option>
+								<option>Italiano</option>
+								<option>Magyar</option>
+								<option>Nederlands</option>
+								<option>Norsk</option>
+								<option>Polski</option>
+								<option>Português</option>
+								<option>Suomi</option>
+								<option>Svenska</option>
+								<option>Türkçe</option>
+								<option>Íslenska</option>
+								<option>Čeština</option>
+								<option>Русский</option>
+								<option>ภาษาไทย</option>
+								<option selected="selected">中文 (简体)</option>
+								<option>中文 (繁體)</option>
+								<option>한국어</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<div>
+							<div class="space-8">
+								<select class="select">
+									<option>AED</option>
+									<option>ARS</option>
+									<option>AUD</option>
+									<option>BGN</option>
+									<option>BRL</option>
+									<option>CAD</option>
+									<option>CHF</option>
+									<option>CLP</option>
+									<option>CNY</option>
+									<option>COP</option>
+									<option>CRC</option>
+									<option>CZK</option>
+									<option>DKK</option>
+									<option>EUR</option>
+									<option>GBP</option>
+									<option>HKD</option>
+									<option>HRK</option>
+									<option>HUF</option>
+									<option>IDR</option>
+									<option>ILS</option>
+									<option>INR</option>
+									<option>JPY</option>
+									<option>KRW</option>
+									<option>MAD</option>
+									<option>MXN</option>
+									<option>MYR</option>
+									<option>NOK</option>
+									<option>NZD</option>
+									<option>PEN</option>
+									<option>PHP</option>
+									<option>PLN</option>
+									<option>RON</option>
+									<option>RUB</option>
+									<option>SAR</option>
+									<option>SEK</option>
+									<option>SGD</option>
+									<option>THB</option>
+									<option>TRY</option>
+									<option>TWD</option>
+									<option>UAH</option>
+									<option selected="selected">USD</option>
+									<option>UYU</option>
+									<option>VND</option>
+									<option>ZAR</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div>
+						客服电话
+						<br>
+						国内：400-889-7054
+						<br>
+						海外：+86-10-5904-5310
+					</div>
+				</div>
+			</div>
+			<div class="company col margin-3 hidden-6">
+				<h2 class="h5 space-15">公司信息</h2>
+				<ul>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">关于</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">工作机会</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">新闻</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">博客</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">帮助</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">政策</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">灾难响应</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">条框与隐私</a>
+					</li>
+				</ul>
+			</div>
+			<div class="company col hidden-6">
+				<h2 class="h5 space-15">发现</h2>
+				<ul>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">信息与安全</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">旅行基金</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">礼品卡</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">Airbnnb精选</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">移动版</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">Airbnb行动力</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">商务差旅</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">网站地图</a>
+					</li>
+				</ul>
+			</div>
+			<div class="company col hidden-6">
+				<h2 class="h5 space-15">出租</h2>
+				<ul>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">为什么要出租？</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">好客之道</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">房东义务</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">居家安全</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="white bianse">即时预定</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="hidden-div col hidden-7">
+				<ul class="hidden-ul">
+					<li class="hidden-li">
+						<a href="javascript:void(0);" class="white bianse">关于</a>
+					</li>
+					<li class="hidden-li">
+						<a href="javascript:void(0);" class="white bianse">工作机会</a>
+					</li>
+					<li class="hidden-li">
+						<a href="javascript:void(0);" class="white bianse">新闻</a>
+					</li>
+					<li class="hidden-li">
+						<a href="javascript:void(0);" class="white bianse">博客</a>
+					</li>
+					<li class="hidden-li">
+						<a href="javascript:void(0);" class="white bianse">条款与隐私</a>
+					</li>
+				</ul>
+			</div>
+		</div class="text-align">
+		<hr class="hr hidden-8">
+		<div>
+			<h2 class="h5 space-4 text-align hidden-8">关注我们</h2>
+			<ul class="text-align">
+				<li class="list-li">
+					<a href="javascript:void(0);" class="a-weibo iconfont white bianse">&#xe600;</a>
+				</li>
+				<li class="list-li">
+					<a href="javascript:void(0);" class="a-linkin iconfont white bianse">&#xe607;</a>
+				</li>
+				<div class="clear"></div>
+			</ul>
+			<div class="space-top-1 text-align">© Airbnb, Inc.</div>
+		</div>
+	</footer>
+
+</div>
+</body>
+</html>
